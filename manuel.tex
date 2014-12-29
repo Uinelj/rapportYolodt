@@ -1,10 +1,12 @@
 \section{Manuel utilisateur}
 %\label{p2}
+Le programme est utilisable en deux versions : Une première non-interactive en ligne de commande, et une seconde interactive graphique.
+\subsection{Interface en ligne de commande}
 
+Le programme peut être invoqué avec 3 arguments différents. L'abscence de arguments renvoie une erreur et un rappel sur la syntaxe des arguments attendus.
 
-LaTeX est un langage et un système de composition de documents créé par Leslie Lamport en 198312. Plus exactement, il s'agit d'une collection de macro-commandes destinées à faciliter l'utilisation du \og processeur de texte \fg{} TeX de Donald Knuth. Depuis 1993, il est maintenu par le LaTeX3 Project team. La première version utilisée largement, appelée LaTeX2.09, est sortie en 1984. Une révision majeure, appelée LaTeX2 epsilon est sortie en 1991.
+-d <folder1> <folder2> ... : Ajoute les dossiers folder1 folder2 ... à la base de données, c'est-à-dire recherche récursivement tous les ODT présents dans ces dossiers, extrait et analyse leur contenu et enregistre les titres pour une recherche future.
 
-Le nom est l'abréviation de Lamport TeX. On écrit souvent \LaTeX, le logiciel permettant les mises en forme correspondant au logo.
+-f <file> : Affiche les informations importantes de l'ODT file : Chemin, titres.
 
-Du fait de sa relative simplicité, il est devenu la méthode privilégiée d'écriture de documents scientifiques employant TeX. Il est particulièrement utilisé dans les domaines techniques et scientifiques pour la production de documents de taille moyenne ou importante (thèse ou livre, par exemple). Néanmoins, il peut aussi être employé pour générer des documents de types variés (par exemple, des lettres, ou des transparents).
-
+-w <words> : Retourne les ODT les plus pertinents en fonction des mots recherchés. Si un "+ " est envoyé, la recherche se fera en mode ET (ie. on cherchera un ODT contenant tous les mots spécifiés après le +). Si un ensemble de mots est spécifié entre guillemets, le programme ne retournera que des ODT contenant exactement la phrase entre guillemets.

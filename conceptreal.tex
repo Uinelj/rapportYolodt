@@ -1,15 +1,30 @@
 \section{Conception et réalisation}
 
-\subsection{Partir de l'utilisateur}
+\subsection{Partir de l'utilisateur pour arriver au diagramme.}
 
 En premier lieu il nous a semblé intéressant de s'imaginer le comportement d'un utilisateur devant le programme fini. Ainsi, au fil des actions du personnage virtuel,
 l'allure globale du projet se détaille.  
 
-Le schéma d'utilisation classique part d'une importation d'un ensemble de dossiers ou fichiers de type Open Document Text ( abrégé ODT par la suite ) . Dès lors se posent évidemment les questions de recherche et vérification de type des fichiers : Une validation par MIME-Type est préférée à la classique comparaison de l'extension.
+Le schéma d'utilisation classique part d'une importation d'un ensemble de dossiers ou fichiers de type Open Document Text ( abrégé ODT par la suite ), l'extraction d'un fichier contenant les données à analyser, l'analyse, et le stockage, ces trois dernières étapes étant totalement transparentes pour l'utilisateur.
+Ensuite vient la recherche. L'utilisateur doit pouvoir entrer un ou plusieurs mots et avoir en retour une liste triée par pertinence des documents ODT les plus pertinents. 
 
-Après l'importation vient l'extraction des données à analyser ensuite : Sur ce point nous avons eu de nombreuses discussions, notamment sur l'automatisation de cette tâche.
-% \subsection{Une sous section}
+L'étape suivante consiste à abstraire le problème en passant par un diagramme de classes UML. Après différentes discussions, le diagramme approuvé par notre groupe est celui-ci.
+ \begin{figure}[!ht]
+	\center
+	\includegraphics[width=\textwidth]{./images/uml.jpg}
+	\caption{\href{http://uinelj.eu/misc/yolODT/uml.jpg}{Voir l'UML en plus grand}}
+\end{figure}
 
+\subsection{Du diagramme au code.}
+
+Au vu de la taille du projet, la réalisation a nécessité un partage des tâches. 
+Afin d'avoir une gestion du projet efficace, simple et sûre, un dépôt git\footnote{git est un logiciel de gestion de versions.} a été créé.
+Ainsi, chaque modification du code est expliquée, enregistrée, et réversible en cas de problème. 
+
+Concernant le partage des tâches suscité, Bastien s'est plus occupé des aspects d'entrée/sortie, de gestion des fichiers et de l'interface graphique, tandis que Julien
+s'est focalisé sur l'extraction, l'analyse (parsage XML) et l'interface en ligne de commande. 
+
+Le partage n'a cependant pas été hermétique : Nous nous avous mutuellement relu notre code et suggéré des améliorations. Un exemple est la gestion de la recherche. Initalement réalisée par la méthode searchWords écrite par Bastien, Julien l'a modifié légèrement et y a adjoint la méthode parseSearch, afin de proposer des possibilités de recherche plus étendues.
 % On peut mettre des mots en \emph{italique}, 
 % en \textsc{petites Majuscules} ou 
 % en \texttt{largeur fixe (machine à écrire)}.
@@ -63,13 +78,6 @@ Après l'importation vient l'extraction des données à analyser ensuite : Sur c
 
 
 % \subsection{Figure}
-
-% \begin{figure}[!ht]
-%     \center
-%     \includegraphics[]{./images/bloghiko.jpg}
-%     \caption{BlogHiko | taille original}
-%     \label{bloghiko}
-% \end{figure}
 
 % \begin{figure}[!ht]
 %     \center
